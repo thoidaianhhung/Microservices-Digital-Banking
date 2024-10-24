@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: account-service
+    bad_request: 400
+    conflict: 409
+    ok: 200
+    not_found: 404
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/account_service?createDatabaseIfNotExist=true
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8081

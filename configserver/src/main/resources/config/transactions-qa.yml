@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+transactions:
+  message: "Welcome to VTI Bank loans related QA APIs "
+  contactDetails:
+    name: "Cyrano Marita - QA Lead"
+    email: "cyrano@vtibank.com"
+  onCallSupport:
+    - (785) 545-6565
+    - (853) 546-3467

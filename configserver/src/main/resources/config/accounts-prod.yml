@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to VTI Bank accounts related prod APIs "
+  contactDetails:
+    name: "NGUYEN VAN HUNG - Product Owner"
+    email: "hungnv@vtibank.com"
+  onCallSupport:
+    - (453) 392-4829
+    - (236) 203-0384

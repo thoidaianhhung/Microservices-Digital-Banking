@@ -1,0 +1,33 @@
+package com.vti.customers.external;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+public class AccountDto {
+
+    private Long accountId;
+
+    private Long accountNumber;
+
+    private AccountType accountType;
+
+    private String branchAddress;
+
+    private Status status;
+
+    private LocalDateTime createDt;
+
+    public enum Status {
+        OPENING, ACTIVE, CLOSED
+    }
+
+    public enum AccountType {
+        SAVINGS_ACCOUNT, LOAN_ACCOUNT
+    }
+}
