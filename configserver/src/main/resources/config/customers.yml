@@ -1,0 +1,11 @@
+build:
+  version: "3.0"
+
+customers:
+  message: "Welcome to VTI Bank cards related local APIs "
+  contactDetails:
+    name: "Dragos Lech - Developer"
+    email: "dragos@vtibank.com"
+  onCallSupport:
+    - (412) 419-3491
+    - (915) 382-1932

@@ -1,0 +1,4 @@
+package com.vti.authserver.form;
+
+public record LoginRequestForm(String username, String password) {
+}

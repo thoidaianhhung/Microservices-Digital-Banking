@@ -1,0 +1,757 @@
+{
+  "info": {
+    "_postman_id": "98b28fd1-3c51-4754-8d45-6ddcd270bf02",
+    "name": "Digital Bank",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29791500"
+  },
+  "item": [
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"mobileNumber\": \"4564747484\",\n    \"pwd\": \"EazyBytes@12345\",\n    \"role\": \"user\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "/register",
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Api Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"happy@example.com\",\n    \"password\": \"EazyBytes@54321\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "/apiLogin",
+              "path": [
+                "apiLogin"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find Customer By Mobile Number",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoiaHVuZ252QGV4YW1wbGUuY29tIiwiYXV0aG9yaXRpZXMiOiJST0xFX1VTRVIiLCJpYXQiOjE3Mjk1MDk0MDIsImV4cCI6MTcyOTUzOTQwMn0.tekJIoUKTyYdNve3xFc0i-eF6-mckh55ZIhJGKcp4E8",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/users/mobile?mobileNumber=4564747481",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "mobile"
+              ],
+              "query": [
+                {
+                  "key": "mobileNumber",
+                  "value": "4564747481"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Users",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoiaHVuZ252QGV4YW1wbGUuY29tIiwiYXV0aG9yaXRpZXMiOiJST0xFX1VTRVIiLCJpYXQiOjE3Mjk1MTEyODMsImV4cCI6MTcyOTU0MTI4M30.8noOu4AxyC8VIaqjLuY33Hixcnr28VUzwsqV7hEWhl4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Madan Mohan\",\n    \"email\": \"tutor@eazybytes\",\n    \"mobileNumber\": \"4354437687\",\n    \"pwd\": \"12345\",\n    \"status\": \"CLOSED\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/v1/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find All User",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "cuongnv@example.com",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "12345",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoiY3VvbmdudkBleGFtcGxlLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNzI5NzQ1MjA5LCJleHAiOjE3Mjk3NzUyMDl9.2OmQKSiQN5PtSYImf35qiDH-_wUhiXYGype1Hpwb5fQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/v1/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "v1",
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Read Customer By Id",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transfer Service",
+      "item": [
+        {
+          "name": "Create Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fromAccount\" : \"0600140000001\",\r\n    \"toAccount\" : \"0600140000002\",\r\n    \"amount\" : \"500\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/fund-transfers",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "fund-transfers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get details of transfer from reference id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/fund-transfers/950e07f5-09ce-4fee-be66-3377233458ad",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "fund-transfers",
+                "950e07f5-09ce-4fee-be66-3377233458ad"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get fund transfer details that are made from an account",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/fund-transfers?accountId=0600140000002",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "fund-transfers"
+              ],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "0600140000002"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Account Service",
+      "item": [
+        {
+          "name": "Create Account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"accountType\" : \"SAVINGS_ACCOUNT\",\r\n    \"userId\" : \"3\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/accounts",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Account",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"accountStatus\" : \"ACTIVE\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8072/vtibank/vtibank/accounts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8072",
+              "path": [
+                "vtibank",
+                "vtibank",
+                "accounts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Read Account By Account Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts?accountNumber=0600140000001",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts"
+              ],
+              "query": [
+                {
+                  "key": "accountNumber",
+                  "value": "0600140000001"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get transactions from account Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts/0600140000001/transactions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts",
+                "0600140000001",
+                "transactions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Closing Account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/v1/accounts/0867320597/close",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "v1",
+                "accounts",
+                "0867320597",
+                "close"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Balance By Account Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/accounts/8",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "accounts",
+                "8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Find By Customer Id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoiY3VvbmdudkBleGFtcGxlLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNzI5NzQ1MjA5LCJleHAiOjE3Mjk3NzUyMDl9.2OmQKSiQN5PtSYImf35qiDH-_wUhiXYGype1Hpwb5fQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8081/api/v1/customers/1/accounts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "v1",
+                "customers",
+                "1",
+                "accounts"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transaction Service",
+      "item": [
+        {
+          "name": "Create Transactions",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"accountId\" : \"0600140000001\",\r\n    \"transactionType\" : \"WITHDRAWAL\",\r\n    \"amount\" : \"200\",\r\n    \"description\" : \"200 has successfully debited from account\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/transactions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get transaction from account Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions?accountId=0600140000001",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "0600140000001"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get transaction details from reference number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/transactions/0671cbe4-fefb-4a60-9e55-93bfb1d5895c",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "transactions",
+                "0671cbe4-fefb-4a60-9e55-93bfb1d5895c"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "gatewayserver",
+      "item": [
+        {
+          "name": "Customer",
+          "item": [
+            {
+              "name": "register",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"nguyen van hung\",\n    \"email\": \"nguyenvanhung@gmail.com\",\n    \"mobileNumber\": \"4354437685\",\n    \"pwd\": \"12345\",\n    \"status\": \"OPENING\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8072/vtibank/customers/api/v1/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8072",
+                  "path": [
+                    "vtibank",
+                    "customers",
+                    "api",
+                    "v1",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "apiLogin",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"nguyenvanhung@gmail.com\",\n    \"password\": \"12345\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8072/vtibank/customers/api/v1/apiLogin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8072",
+                  "path": [
+                    "vtibank",
+                    "customers",
+                    "api",
+                    "v1",
+                    "apiLogin"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Find Customer By Mobile Number",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoibmd1eWVudmFuaHVuZ0BnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfVVNFUiIsImlhdCI6MTcyOTc2MzM0NSwiZXhwIjoxNzI5NzkzMzQ1fQ.8Lm1hp19bYGKaoXNg4ASkAnTob9rP9OKuXVdsHsWj-4",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:8072/vtibank/customers/api/v1/customers/mobile/4354437685",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8072",
+                  "path": [
+                    "vtibank",
+                    "customers",
+                    "api",
+                    "v1",
+                    "customers",
+                    "mobile",
+                    "4354437685"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Users",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoibmd1eWVudmFuaHVuZ0BnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IlJPTEVfVVNFUiIsImlhdCI6MTcyOTc2MzM0NSwiZXhwIjoxNzI5NzkzMzQ1fQ.8Lm1hp19bYGKaoXNg4ASkAnTob9rP9OKuXVdsHsWj-4",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"Madan Mohan\",\n    \"email\": \"tutor@eazybytes\",\n    \"mobileNumber\": \"4354437687\",\n    \"pwd\": \"12345\",\n    \"status\": \"CLOSED\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8072/vtibank/customers/api/v1/customers/1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8072",
+                  "path": [
+                    "vtibank",
+                    "customers",
+                    "api",
+                    "v1",
+                    "customers",
+                    "1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Find All User",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoiY3VvbmdudkBleGFtcGxlLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNzI5NzQ1MjA5LCJleHAiOjE3Mjk3NzUyMDl9.2OmQKSiQN5PtSYImf35qiDH-_wUhiXYGype1Hpwb5fQ",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8072/vtibank/customers/api/v1/customers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8072",
+                  "path": [
+                    "vtibank",
+                    "customers",
+                    "api",
+                    "v1",
+                    "customers"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Find List Accounts",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJWVEkgQmFuayIsInN1YiI6IkpXVCBUb2tlbiIsInVzZXJuYW1lIjoiY3VvbmdudkBleGFtcGxlLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9VU0VSIiwiaWF0IjoxNzI5NzQ1MjA5LCJleHAiOjE3Mjk3NzUyMDl9.2OmQKSiQN5PtSYImf35qiDH-_wUhiXYGype1Hpwb5fQ",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:8072/vtibank/customers/api/v1/customers/1/accounts",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8072",
+                  "path": [
+                    "vtibank",
+                    "customers",
+                    "api",
+                    "v1",
+                    "customers",
+                    "1",
+                    "accounts"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
