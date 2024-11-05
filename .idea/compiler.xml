@@ -9,13 +9,15 @@
         <module name="eurekaserver" />
         <module name="gatewayserver" />
         <module name="transferserver" />
-        <module name="authorityserver" />
         <module name="transactionserver" />
         <module name="configserver" />
         <module name="accountserver" />
         <module name="customerserver" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authorityserver" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

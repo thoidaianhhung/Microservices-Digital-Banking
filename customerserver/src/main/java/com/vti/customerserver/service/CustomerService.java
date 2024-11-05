@@ -2,10 +2,13 @@ package com.vti.customerserver.service;
 
 
 import com.vti.customerserver.dto.CustomerDto;
+import com.vti.customerserver.dto.LoginResponseDTO;
 import com.vti.customerserver.form.CustomerCreateForm;
 import com.vti.customerserver.form.CustomerUpdateForm;
+import com.vti.customerserver.form.LoginRequestForm;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 
 public interface CustomerService {
 
@@ -25,6 +28,8 @@ public interface CustomerService {
 
 
     CustomerDto createUser(CustomerCreateForm customerCreateForm);
+
+    ResponseEntity<LoginResponseDTO> loginUser(LoginRequestForm loginRequestForm);
 
 
     /**

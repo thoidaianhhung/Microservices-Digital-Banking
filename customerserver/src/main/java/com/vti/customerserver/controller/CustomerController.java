@@ -1,8 +1,10 @@
 package com.vti.customerserver.controller;
 
 import com.vti.customerserver.dto.CustomerDto;
+import com.vti.customerserver.dto.LoginResponseDTO;
 import com.vti.customerserver.form.CustomerCreateForm;
 import com.vti.customerserver.form.CustomerUpdateForm;
+import com.vti.customerserver.form.LoginRequestForm;
 import com.vti.customerserver.service.CustomerService;
 import com.vti.customerserver.validation.CustomerIdExists;
 import jakarta.validation.Valid;
@@ -10,6 +12,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +40,12 @@ public class CustomerController {
     @PostMapping("/register")
     public CustomerDto createUser(@Valid @RequestBody CustomerCreateForm customerCreateForm) {
         return customerService.createUser(customerCreateForm);
+    }
+
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponseDTO> loginUser(@Valid @RequestBody LoginRequestForm loginRequestForm) {
+        return customerService.loginUser(loginRequestForm);
     }
 
 

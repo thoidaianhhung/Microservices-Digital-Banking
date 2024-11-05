@@ -22,6 +22,7 @@ public class SecurityConfig {
     public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity serverHttpSecurity) {
         serverHttpSecurity.authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/vtibank/customers/api/v1/register").permitAll()
+                        .pathMatchers("/vtibank/customers/api/v1/login").permitAll()
                         .pathMatchers("/vtibank/customers/**").hasRole(ROLE_CUSTOMER)
                         .pathMatchers("/vtibank/accounts/**").hasRole(ROLE_CUSTOMER)
                         .pathMatchers("/vtibank/transfers/**").hasRole(ROLE_CUSTOMER)
